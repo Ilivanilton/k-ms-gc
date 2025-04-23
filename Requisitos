@@ -1,0 +1,67 @@
+# 📘 Levantamento de Requisitos – Sistema de Cobrança
+
+## 📌 Objetivo
+
+Este documento descreve o fluxo de cobrança dos associados e define os principais requisitos funcionais para o desenvolvimento de um sistema de gestão de cobranças. O objetivo é controlar a emissão de mensalidades, o recebimento de pagamentos e o tratamento da inadimplência de forma automatizada e eficiente.
+
+---
+
+## 🔁 Fluxo de Cobrança
+
+### 1. Geração da Dívida
+- Um registro de débito é criado no sistema com valor, associado e condições de pagamento.
+
+### 2. Emissão da Cobrança
+- O sistema emite uma cobrança com valor, data de vencimento e forma de pagamento (PIX).
+- Essa cobrança é registrada e associada ao associado.
+
+### 3. Envio ao Cliente
+- A fatura é enviada automaticamente por WhatsApp ou outros canais integrados.
+- O associado recebe lembretes periódicos antes do vencimento.
+
+### 4. Acompanhamento do Vencimento
+- O sistema monitora a data de vencimento da fatura.
+- Caso o pagamento seja realizado, a baixa é manualmente.
+- Se o pagamento não for efetuado, o sistema inicia o processo de cobrança.
+
+### 5. Cobrança Amigável
+- O sistema envia notificações de atraso (whats).
+- Pode haver renegociação com novo vencimento ou desconto.
+- Todas as interações devem ser registradas.
+
+---
+
+## 🧩 Entidades Envolvidas
+
+- **associado**: Dados cadastrais e formas de contato.
+- **mensalidade**: Origem da dívida.
+- **Fatura**: Registro financeiro com valores, vencimento e status.
+- **Pagamento**: Registro do recebimento.
+
+---
+
+## ✅ Requisitos Funcionais
+
+1. Cadastrar clientes com dados pessoais e contatos.
+3. Gerar cobranças manualmente.
+4. Emitir faturas com vencimento, valor, juros/multa e desconto.
+5. Enviar faturas por múltiplos canais.
+6. Registrar e identificar pagamentos (manual).
+7. Notificar o cliente sobre vencimentos e inadimplência.
+8. Gerenciar renegociações e acordos.
+10. Gerar relatórios financeiros e de inadimplência.
+
+---
+
+## 📎 Considerações Técnicas
+
+- Gatilhos automáticos para envio de notificações.
+- Painel administrativo para monitoramento dos débitos e ações tomadas.
+
+---
+
+## 📅 Próximos Passos
+
+- Refinamento da modelagem de dados.
+- Especificação das APIs REST.
+
